@@ -8,6 +8,7 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
+	  background: url("https://static.vecteezy.com/system/resources/previews/006/551/665/non_2x/blue-ocean-with-fish-silhouette-background-free-vector.jpg")
     }
     #fishVideo {
       display: none; /* Initially hidden */
@@ -15,32 +16,19 @@
   </style>
 </head>
 <body>
-  <a href="index.html">homepage</a>
   <h1>Secrets of the Fishies</h1>
   <p>Please enter the code to reveal the secrets:</p>
   <input type="text" id="codeInput">
   <button onclick="revealSecrets()">Enter</button>
+  <a href="index.html">home</a>
+
   
-  <!-- Jumpscare video -->
   <video id="fishVideo" width="640" height="360" controls>
     <source src="Untitled design.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <script>
-    function revealSecrets() {
-      var code = document.getElementById("codeInput").value.toLowerCase();
-      if (code === "fish") {
-        var video = document.getElementById("fishVideo");
-        video.style.display = "block"; // Show the video
-        video.play(); // Play the video
-        setTimeout(function() {
-          video.style.display = "none"; // Hide the video after it finishes
-        }, video.duration * 1000); // Hide the video after it finishes playing
-      } else {
-        alert("Incorrect code. Try again.");
-      }
-    }
+  <script src = "FishSecret.js">
   </script>
 </body>
 </html>
