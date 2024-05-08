@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fisher clicker</title>
+  <title>Fisher Clicker</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,16 +25,17 @@
   </style>
 </head>
 <body>
-  <h1>fisher clicker</h1>
+  <h1>Fisher Clicker</h1>
   <p>Click the fish king to earn points!</p>
   <p>Points: <span id="score">0</span></p>
   <div id="clickBtn">
-    <img src="fishKing.png" alt="Click Me!">
+    <img src="fishKing.png" alt="Click Me!" id="fishKing">
   </div>
-  <h2>do not worry, progress is saved!</h2>
-  <h3>Perditor/Fishgod's game
-</h3>
-  <a href="fish.html">fishies secrets</a>
+  <h2>Do not worry, progress is saved!</h2>
+  <h3>Perditor/Fishgod's game</h3>
+  <a href="fish.html">Secrets of the Fish</a>
+
+  <audio id="fishSound" src="Fishy.mp3"></audio>
 
   <script>
     let score = localStorage.getItem("clickerScore") || 0;
@@ -56,14 +57,12 @@
     }
 
     // Add event listener to the button
-    document.getElementById("clickBtn").addEventListener("click", handleClick);
-
-    {
+    document.getElementById("clickBtn").addEventListener("click", function() {
       var audio = new Audio("Fishy.mp3");
       audio.play();
       handleClick();
     });
-    
+
     // Initialize score display
     updateScore();
   </script>
