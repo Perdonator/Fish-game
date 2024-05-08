@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secrets of the Fishies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #fishVideo {
+      display: none; /* Initially hidden */
+    }
+  </style>
+</head>
+<body>
+  <h1>Secrets of the Fishies</h1>
+  <p>Please enter the code to reveal the secrets:</p>
+  <input type="text" id="codeInput">
+  <button onclick="revealSecrets()">Enter</button>
+
+  <!-- Jumpscare video -->
+  <video id="fishVideo" width="640" height="360" controls>
+    <source src="Untitled design.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    function revealSecrets() {
+      var code = document.getElementById("codeInput").value.toLowerCase();
+      if (code === "fish") {
+        var video = document.getElementById("fishVideo");
+        video.style.display = "block"; // Show the video
+        video.play(); // Play the video
+        setTimeout(function() {
+          video.style.display = "none"; // Hide the video after it finishes
+        }, video.duration * 1000); // Hide the video after it finishes playing
+      } else {
+        alert("Incorrect code. Try again.");
+      }
+    }
+  </script>
+</body>
+</html>
