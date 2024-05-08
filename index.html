@@ -8,13 +8,14 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
+	  background: url("https://static.vecteezy.com/system/resources/previews/006/551/665/non_2x/blue-ocean-with-fish-silhouette-background-free-vector.jpg")
     }
     #score {
       font-size: 24px;
       margin-bottom: 20px;
     }
     #clickBtn img {
-      width: 100px; /* Adjust the size as needed */
+      width: 100px; 
       height: 100px;
       cursor: pointer;
       transition: transform 0.5s ease;
@@ -24,7 +25,7 @@
     }
   </style>
 </head>
-<body>
+<body class = "body">
   <h1>Fisher Clicker</h1>
   <p>Click the fish king to earn points!</p>
   <p>Points: <span id="score">0</span></p>
@@ -34,37 +35,21 @@
   <h2>Do not worry, progress is saved!</h2>
   <h3>Perditor/Fishgod's game</h3>
   <a href="fish.html">Secrets of the Fish</a>
-
+  <div>
+    <button onclick = "noSound()" class = "buttons"> Remove fish sound </button>
+	<button onclick = "backSound()" class = "buttons" > Turn fish sound on </button>
+    <style>
+	.buttons {
+	  margin: 15px;
+	  font-size: 20px;
+	  background-color: #A0F6F6;
+	}
+	</style>
+  </div>
+  
+  
+<script src = "FishyScript.js">
+</script>
   <audio id="fishSound" src="Fishy.mp3"></audio>
-
-  <script>
-    let score = localStorage.getItem("clickerScore") || 0;
-
-    // Update score display
-    function updateScore() {
-      document.getElementById("score").textContent = score;
-    }
-
-    // Function to handle button click
-    function handleClick() {
-      score++;
-      updateScore();
-      localStorage.setItem("clickerScore", score);
-      document.getElementById("clickBtn").classList.add("clicked");
-      setTimeout(() => {
-        document.getElementById("clickBtn").classList.remove("clicked");
-      }, 50);
-    }
-
-    // Add event listener to the button
-    document.getElementById("clickBtn").addEventListener("click", function() {
-      var audio = new Audio("Fishy.mp3");
-      audio.play();
-      handleClick();
-    });
-
-    // Initialize score display
-    updateScore();
-  </script>
 </body>
 </html>
