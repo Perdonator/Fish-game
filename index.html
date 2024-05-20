@@ -8,7 +8,23 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-	  background: url("https://static.vecteezy.com/system/resources/previews/006/551/665/non_2x/blue-ocean-with-fish-silhouette-background-free-vector.jpg")
+      background: url("https://static.vecteezy.com/system/resources/previews/006/551/665/non_2x/blue-ocean-with-fish-silhouette-background-free-vector.jpg");
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #fullscreenButton {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
     }
     #score {
       font-size: 24px;
@@ -23,9 +39,18 @@
     #clickBtn img:hover {
       transform: scale(1.1);
     }
+    .buttons {
+      margin: 15px;
+      font-size: 20px;
+      background-color: #A0F6F6;
+    }
+    .changelog {
+      font-size: 40px;
+    }
   </style>
 </head>
-<body class = "body">
+<body class="body">
+  <button id="fullscreenButton">Fullscreen</button>
   <h1>Fisher Clicker</h1>
   <p>Click the fish king to earn points!</p>
   <p>Points: <span id="score">0</span></p>
@@ -36,31 +61,33 @@
   <h3>Perditor/Fishgod's game</h3>
   <a href="fish.html">Secrets of the Fish</a>
   <div>
-    <button onclick = "noSound()" class = "buttons"> Remove fish sound </button>
-	<button onclick = "backSound()" class = "buttons" > Turn fish sound on </button>
-    <style>
-	.buttons {
-	  margin: 15px;
-	  font-size: 20px;
-	  background-color: #A0F6F6;
-	}
-	</style>
+    <button onclick="noSound()" class="buttons"> Remove fish sound </button>
+    <button onclick="backSound()" class="buttons"> Turn fish sound on </button>
   </div>
   <div>
-    <button class = "buttons" onclick = "ClickGrader()">Upgrade click fish!</button>
-	<h4>Clicks are on lvl <span id = "gradeCounter">1</span></h4>
-	<h5>For next fishy click lvl pay: <span id = "payCounter">100</span></h5>
-	<h6 class = "changelog"> Change-log: <br/> Update v1.2: <br/> - Added click garder. </h6>
-	<style>
-	.changelog {
-      font-size: 40px;
-	}
-	</style>
+    <button class="buttons" onclick="ClickGrader()">Upgrade click fish!</button>
+    <h4>Clicks are on lvl <span id="gradeCounter">1</span></h4>
+    <h5>For next fishy click lvl pay: <span id="payCounter">100</span></h5>
+    <h6 class="changelog"> Change-log: <br/> Update v1.2: <br/> - Added click upgrader. 
+    added fullscreen mode</h6>
   </div>
-  
-<script src = "FishyScript.js">
-</script>
-<script src = "FishSecret.js"> </script>
+
+  <script src="FishyScript.js"></script>
+  <script src="FishSecret.js"></script>
   <audio id="fishSound" src="Fishy.mp3"></audio>
+  <script>
+     document.getElementById('fullscreenButton').addEventListener('click', function() {
+      if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().then(() => {
+              this.style.display = 'none'; // Hide the button after entering fullscreen
+          }).catch(err => {
+              alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+          });
+      } else {
+          document.exitFullscreen();
+      }
+  });
+
+  </script>
 </body>
 </html>
