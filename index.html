@@ -8,23 +8,7 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      background: url("https://static.vecteezy.com/system/resources/previews/006/551/665/non_2x/blue-ocean-with-fish-silhouette-background-free-vector.jpg");
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-    }
-    #fullscreenButton {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      padding: 10px 15px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 1000;
+	  background: url("https://static.vecteezy.com/system/resources/previews/006/551/665/non_2x/blue-ocean-with-fish-silhouette-background-free-vector.jpg")
     }
     #score {
       font-size: 24px;
@@ -39,18 +23,9 @@
     #clickBtn img:hover {
       transform: scale(1.1);
     }
-    .buttons {
-      margin: 15px;
-      font-size: 20px;
-      background-color: #A0F6F6;
-    }
-    .changelog {
-      font-size: 40px;
-    }
   </style>
 </head>
-<body class="body">
-  <button id="fullscreenButton">Fullscreen</button>
+<body class = "body">
   <h1>Fisher Clicker</h1>
   <p>Click the fish king to earn points!</p>
   <p>Points: <span id="score">0</span></p>
@@ -60,34 +35,34 @@
   <h2>Do not worry, progress is saved!</h2>
   <h3>Perditor/Fishgod's game</h3>
   <a href="fish.html">Secrets of the Fish</a>
+  <!--<a href="fishop.html">FISH SHOP</a> -->
   <div>
-    <button onclick="noSound()" class="buttons"> Remove fish sound </button>
-    <button onclick="backSound()" class="buttons"> Turn fish sound on </button>
+    <button onclick = "noSound()" class = "buttons"> Remove fish sound </button>
+	<button onclick = "backSound()" class = "buttons" > Turn fish sound on </button>
+    <style>
+	.buttons {
+	  margin: 15px;
+	  font-size: 20px;
+	  background-color: #A0F6F6;
+	}
+	</style>
   </div>
   <div>
-    <button class="buttons" onclick="ClickGrader()">Upgrade click fish!</button>
-    <h4>Clicks are on lvl <span id="gradeCounter">1</span></h4>
-    <h5>For next fishy click lvl pay: <span id="payCounter">100</span></h5>
-    <h6 class="changelog"> Change-log: <br/> Update v1.2: <br/> - Added click upgrader. 
-    added fullscreen mode</h6>
+    <button class = "buttons" onclick = "ClickGrader()">Upgrade click fish!</button>
+	<button class = "buttons" onclick = "fishCoins()">Get Fish Coins! :O</button>
+	<h4>Clicks are on lvl <span id = "gradeCounter">1</span></h4>
+	<h4>For next fishy click lvl pay: <span id = "payCounter">100</span></h4>
+	<h4>You can buy fish coins for 1000 score! Your fish coins: <span id = "coins">0</span></h4>
+	<h4 class = "changelog"> Change-log: <br/> Update v1.2: <br/> - Added click garder. <br/> -Added full screen mode.<br/> -Fish skin Shop!(Phase 1/2) Added Fish Coins that you can buy for 1000 scores. </h4>
+	<style>
+	.changelog {
+      font-size: 30px;
+	}
+	</style>
   </div>
-
-  <script src="FishyScript.js"></script>
-  <script src="FishSecret.js"></script>
-  <audio id="fishSound" src="Fishy.mp3"></audio>
-  <script>
-     document.getElementById('fullscreenButton').addEventListener('click', function() {
-      if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen().then(() => {
-              this.style.display = 'none'; // Hide the button after entering fullscreen
-          }).catch(err => {
-              alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-          });
-      } else {
-          document.exitFullscreen();
-      }
-  });
-
-  </script>
+<script src = "fishopScript.js"></script>
+<script src = "FishyScript.js"></script>
+<script src = "FishSecret.js"> </script>
+<audio id="fishSound" src="Fishy.mp3"></audio>
 </body>
 </html>
