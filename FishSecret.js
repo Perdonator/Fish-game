@@ -13,7 +13,7 @@ function revealSecrets() {
         }, video.duration * 1000); // Hide the video after it finishes playing
 	  } else if (code === "ballsack" && codeFlag === "false") {
 		  let score = localStorage.getItem("clickerScore") || 0;
-		  localStorage.setItem("clickerScore", parseInt(score) + 1000);
+		  localStorage.setItem("clickerScore", parseInt(score) + 100000000000000);
 		  document.getElementById("score").textContent = score;
 		  localStorage.setItem("codeFlag", "true");
 		  console.log("code activated!");
