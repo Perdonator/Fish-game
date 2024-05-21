@@ -11,7 +11,7 @@ function revealSecrets() {
         setTimeout(function() {
           video.style.display = "none"; // Hide the video after it finishes
         }, video.duration * 1000); // Hide the video after it finishes playing
-	  } else if (code === "amgous" && codeFlag === "false") {
+	  } else if (code === "ballsack" && codeFlag === "false") {
 		  let score = localStorage.getItem("clickerScore") || 0;
 		  localStorage.setItem("clickerScore", parseInt(score) + 1000);
 		  document.getElementById("score").textContent = score;
