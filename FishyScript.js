@@ -1,4 +1,4 @@
-let score = localStorage.getItem("a839sja92") || 0;
+let score = localStorage.getItem("clickerScore") || 0;
 var isSound = "true";
 let clickGrader = localStorage.getItem("ClickGrade") || 1;
 let Coins = localStorage.getItem("Coins") || 0;
@@ -10,7 +10,7 @@ let skin2 = localStorage.getItem("FishSkin2") || false;
 
 
 //Amgous commands frfr
-localStorage.setItem("a839sja92", score);
+localStorage.setItem("clickerScore", score);
 localStorage.setItem("ClickGrade", clickGrader);
 localStorage.setItem("Pay", pay);
 localStorage.setItem("Coins", Coins);
@@ -50,7 +50,7 @@ function handleClick() {
 	}, 200);
 	score = parseInt(score) + 1 * parseInt(clickGrader);
 	updateScore()
-	localStorage.setItem("a839sja92", score);
+	localStorage.setItem("clickerScore", score);
 	console.log("clicked");
 
 }
@@ -115,7 +115,7 @@ function reset() {
 		clickGrader = 1;
 		updateScore();
 		update();
-		localStorage.setItem("a839sja92", score);
+		localStorage.setItem("clickerScore", score);
 		localStorage.setItem("ClickGrade", clickGrader);
 		localStorage.setItem("Pay", pay);
 	} else {
