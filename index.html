@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fisher Clicker</title>
+  <link rel="stylesheet" href="fish.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,34 +14,45 @@
     #score {
       font-size: 24px;
       margin-bottom: 20px;
+      user-select: none;
+      background-color: rgb(212, 0, 255);
+      border-radius: 15px;
+      color: rgb(0, 255, 213);
     }
     #clickBtn img {
       width: 100px; 
       height: 100px;
       cursor: pointer;
-      transition: transform 0.5s ease;
+      user-select: none;
     }
     #clickBtn img:hover {
-      transform: scale(1.1);
-      cursor: url("https://png.pngtree.com/png-vector/20230831/ourmid/pngtree-raw-sea-bass-fresh-seabass-fish-isolated-on-white-background-with-png-image_9225167.png"), auto;
+      user-select: none;
     }
+
+    #progrees {
+      color: tomato;
+      user-select: none;
+    }
+    
+    
+
   </style>
 </head>
 <body class = "body">
-  <h1>Fisher Clicker</h1>
-  <p>Click the fish king to earn points!</p>
-  <p>Points: <span id="score">0</span></p>
+  <h1 id="fishyclicky">Fisher Clicker</h1>
+  <p id="fishel">Click the fish king to earn points!</p>
+  <p id="pointy">Points: <span id="score">0</span></p>
   <button id="clickBtn">
     <img src="fishKing.png" id = "fishBtn"/>
 	<img src="fishskin.png" id = "fishSkin"/>
   </button>
-  <h2>Do not worry, progress is saved!</h2>
-  <h3>Perditor/Fishgod's game</h3>
-  <a href="fish.html">Secrets of the Fish</a>
+  <h2 id="progrees">Do not worry, progress is saved!</h2>
+  <h3 id="perditor">Perditor/Fishgod's game</h3>
+  <a href="fish.html" id="soup">Secrets of the Fish</a>
   <button onclick = "showShop()" id = "shopBtn" class = "buttons">FISH SHOP</button>
   <div>
-    <button onclick = "noSound()" class = "buttons"> Remove fish sound </button>
-	<button onclick = "backSound()" class = "buttons" > Turn fish sound on </button>
+    <button onclick = "noSound()" class = "buttons" id="butt"> Remove fish sound </button>
+	<button onclick = "backSound()" class = "buttons"  id="butt"> Turn fish sound on </button>
     <style>
 	.buttons {
 	  margin: 15px;
@@ -50,13 +62,13 @@
 	</style>
   </div>
   <div>
-      <button class="buttons" onclick="ClickGrader()">Upgrade click fish!</button>
-      <button class="buttons" onclick="fishCoins()">Get Fish Coins! :O</button>
-      <h4>Clicks are on lvl <span id="gradeCounter">1</span></h4>
-      <h4>For next fishy click lvl pay: <span id="payCounter">100</span></h4>
-      <h4>You can buy fish coins for 1000 score! Your fish coins: <span id="coins">0</span></h4>
+      <button class="buttons" onclick="ClickGrader()" id="but">Upgrade click fish!</button>
+      <button class="buttons" onclick="fishCoins()" id="sexycoin">Get Fish Coins! :O</button>
+      <h4 id="numba">Clicks are on lvl <span id="gradeCounter">1</span></h4>
+      <h4 id="clickypay">For next fishy click lvl pay: <span id="payCounter">100</span></h4>
+      <h4 id="buyer">You can buy fish coins for 1000 score! Your fish coins: <span id="coins">0</span></h4>
       <button class="buttons" onclick="changelogToggle()" id = "clTog">Show Changelog!</button>
-      <h4 id="changelog"> Change-log: <br /> - Added click garder. <br /> -Added full screen mode.<br/> -Fish skin Shop!(Phase 1/2) Added Fish Coins that you can buy for 1000 scores. <br/> -Added "Reset all" button, that will reset all your progress except fish coins. <br/>- Fixed a lot of display glitches. <br/>- Fish Shop (Phase 2/2)! Fish shop appeared, you can find it by clicking on the "Fish Shop" button. <br/>- Now you can give developer team an idea for the shop! Join our discord! (https://discord.gg/bcucQXz2)</h4>
+      <h4 id="changelog"> Change-log: <br /> - Added click garder. <br /> -Added full screen mode.<br/> -Fish skin Shop!(Phase 1/2) Added Fish Coins that you can buy for 1000 scores. <br/> -Added "Reset all" button, that will reset all your progress except fish coins. <br/>- Fixed a lot of display glitches. <br/>- Fish Shop (Phase 2/2)! Fish shop appeared, you can find it by clicking on the "Fish Shop" button. <br/>-fish</h4>
       <button onclick="reset()" class="buttons">Reset all</button>
       <style>
           .changelog {
