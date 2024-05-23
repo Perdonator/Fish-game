@@ -96,12 +96,6 @@
     user-select: none;
 }
 
-#sexycoin {
-    background-color: rgb(54, 53, 53);
-    font-style: italic;
-    border-radius: 5px;
-    user-select: none;
-}
 
 #sexycoin:hover {
   background-color: rgb(73, 61, 61);
@@ -109,31 +103,31 @@
 }
 
 #coins {
-    color: blue;
-    user-select: none;
+    color: rgb(255 173 173);
+	text-shadow: 1px 1px 1px #000;
 }
 #buyer {
-    color: rgb(119, 0, 255);
-    user-select: none;
+    color: rgb(255 173 173);
+	text-shadow: 1px 1px 1px #000;
 }
 
 #clickypay {
-    user-select: none;
-    color: rgb(12, 192, 57);
+    color: rgb(197 0 136);
 }
 
 #payCounter {
     color: rgb(255, 0, 98);
-    user-select: none;
+    font-size: 20px;
 }
 #gradeCounter {
     user-select: none;
-    color: aquamarine;
+    color: #002d1e;
+	font-size: 20px;
 }
 
 #numba {
-    user-select: none;
-    color: aqua;
+    color: black;
+	text-shadow: 1px 1px 1px #000;
 }
 
 #clTog {
@@ -155,3 +149,7 @@
     color: rgb(55, 0, 255);
     user-select: none;
 }
+#reset {
+	background-color: rgb(255 0 0 / 68%);
+}
+	
